@@ -38,6 +38,7 @@ def DrawBoard():
         if val1 != 2:
             print('-----')
         count += 3
+    print('------------')
 
 """
     PlayPiece(char piece, int position)
@@ -85,7 +86,7 @@ def ResetBoard():
     Postcondition: Plays best move onto board
 """
 def AIMove():
-    #print('No move for AI yet')
+    print('AI Move')
     random_number_bool = True
     choice = 0
     while(random_number_bool):
@@ -98,7 +99,7 @@ def AIMove():
     PlayPiece(cur_player, choice)
     DrawBoard()
     
-    #Max # of moves for player 2 = 4
+    #Max number of moves for player 2 = 4
     #Get best move, first move could be random
     #Second move is based on player 1 second move
     #Next steps should repeated until game is over
@@ -168,7 +169,7 @@ def main():
                     else:
                         cur_player = player1
                 
-            print('------------')
+            
             
                 
         if(has_won == 1):
