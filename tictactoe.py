@@ -16,6 +16,8 @@
                 Inputing anything else besides a 1-9 breaks program
                 Inputing 0 skips player 1 move
 
+                Every other player 1 move w/ AI plays the opposite piece for player 1
+
 
 """
 import random as rand
@@ -161,6 +163,7 @@ def main():
         DrawBoard()
         #start of game
         while(has_won == 0):
+            spot = 0
             while(spot == 0):
                 spot = GetPosition()
             
@@ -178,8 +181,6 @@ def main():
 
             else:
                 print('Spot is occupied, retry.')
-
-            spot = 0
 
             if(player_count == 1 and cur_player == player2): #player_count equals 1
                 AIMove()
