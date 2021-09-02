@@ -131,6 +131,21 @@ def GetPlayerCount():
         
     return num_of_players
     
+"""
+    GetPosition()
+    Description: Get position from user to players piece
+    Precondition: None
+    Postcondition: None
+    Return: Position player chose, if position is 1-9 and an integer
+            0 if player chosen position is invalid
+"""
+def GetPosition():
+    user_input = input('Enter spot: ')
+    position = 0
+    if user_input.isdigit():
+        position = int(user_input)
+    return position
+
 #Main for tictactoe game
 def main():
     has_won = 0
@@ -138,6 +153,7 @@ def main():
     cur_player = player1
     player_count = 2
     play_game = True
+    spot = 0
     #ask for number of players
     #default is 2 for testing purposes right now
     player_count = GetPlayerCount()
@@ -145,8 +161,8 @@ def main():
         DrawBoard()
         #start of game
         while(has_won == 0):
-            #if(player_count == 2):
-            spot = int(input('Enter spot'))
+            while(spot == 0):
+                spot = GetPosition()
             
             if(board[spot - 1] == ' '):
                 PlayPiece(cur_player, spot)
@@ -162,6 +178,8 @@ def main():
 
             else:
                 print('Spot is occupied, retry.')
+
+            spot = 0
 
             if(player_count == 1 and cur_player == player2): #player_count equals 1
                 AIMove()
