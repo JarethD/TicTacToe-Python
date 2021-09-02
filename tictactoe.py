@@ -1,7 +1,7 @@
 """
     Author: Jareth Dodson
     Filename: tictactoe.py
-    Last Updated: 8/20/2021
+    Last Updated: 8/24/2021
     Description: Text based version of tictactoe that
                  can have 2 players or 1 player vs. an AI
 
@@ -13,6 +13,10 @@
     Problems:   When playing against AI, when player1
                     goes to an occupied spot, the AI will still play
                 
+                Inputing anything else besides a 1-9 breaks program
+                Inputing 0 skips player 1 move
+
+
 """
 import random as rand
 #Global Variables
@@ -43,7 +47,7 @@ def DrawBoard():
 """
     PlayPiece(char piece, int position)
     Description: Adds piece to board
-    Postcondition: position must be a valid interger
+    Precondition: position must be a valid interger
     Postcondition: piece gets added to board
     Return: None
 """
@@ -109,7 +113,7 @@ def AIMove():
     
 
 """
-    GetPlayerCount(num_players)
+    GetPlayerCount()
     Description: Get the number of players for the game
     Precondition: None
     Postcondition: None
@@ -143,6 +147,7 @@ def main():
         while(has_won == 0):
             #if(player_count == 2):
             spot = int(input('Enter spot'))
+            
             if(board[spot - 1] == ' '):
                 PlayPiece(cur_player, spot)
                 DrawBoard()
@@ -157,6 +162,7 @@ def main():
 
             else:
                 print('Spot is occupied, retry.')
+
             if(player_count == 1 and cur_player == player2): #player_count equals 1
                 AIMove()
                 cur_player = player1
