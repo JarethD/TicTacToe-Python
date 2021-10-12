@@ -105,15 +105,6 @@ def AIMove():
 
     PlayPiece(cur_player, choice)
     DrawBoard()
-    
-    #Max number of moves for player 2 = 4
-    #Get best move, first move could be random
-    #Second move is based on player 1 second move
-    #Next steps should repeated until game is over
-    #   should block move if player 1 can get a win on third move
-    #   else move should benefit AI or be random
-    #   elif AI can win, move to winning spot
-    
 
 """
     GetPlayerCount()
@@ -193,10 +184,7 @@ def main():
                         cur_player = player2
                     else:
                         cur_player = player1
-                
-            
-            
-                
+                 
         if(has_won == 1):
             print(cur_player + ' has won!')
         else:
@@ -209,5 +197,6 @@ def main():
             has_won = 0
             play_game = True
             ResetBoard()
+
 if __name__ == '__main__':
     main()
