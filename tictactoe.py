@@ -5,7 +5,8 @@
     Description: Text based version of tictactoe that
                  can have 2 players or 1 player vs. an AI
 
-    Possible addons: Show a demo board,
+    Possible addons: Minimax AI Algorithm,
+                     Show a demo board,
                      Difficulty levels,
                      GUI(may involve revamp),
                      Make main less messy(make more functions)
@@ -157,7 +158,6 @@ def main():
     play_game = True
     spot = 0
     #ask for number of players
-    #default is 2 for testing purposes right now
     player_count = GetPlayerCount()
     while(play_game == True):
         DrawBoard()
