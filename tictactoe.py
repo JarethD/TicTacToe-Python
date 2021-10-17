@@ -132,10 +132,13 @@ def GetPlayerCount():
             0 if player chosen position is invalid
 """
 def GetPosition():
-    user_input = input('Enter spot: ')
     position = 0
-    if user_input.isdigit():
+    user_input = input('Enter spot: ')
+    while position == 0 and user_input.isdigit():
         position = int(user_input)
+        if(position not in range(1,10)):
+            position = 0
+            user_input = input('Enter spot: ')   
     return position
 
 #Main for tictactoe game
