@@ -14,7 +14,6 @@
     Problems:   When playing against AI, when player1
                     goes to an occupied spot, the AI will still play
                 
-                Inputing anything else besides a 1-9 breaks program
                 Inputing 0 skips player 1 move
 
 
