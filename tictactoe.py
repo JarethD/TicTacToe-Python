@@ -10,13 +10,6 @@
                      Difficulty levels,
                      GUI(may involve revamp),
                      Make main less messy(make more functions)
-
-    Problems:   When playing against AI, when player1
-                    goes to an occupied spot, the AI will still play
-                
-                Inputing 0 skips player 1 move
-
-
 """
 import random as rand
 #Global Variables
