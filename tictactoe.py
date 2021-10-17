@@ -1,7 +1,7 @@
 """
     Author: Jareth Dodson
     Filename: tictactoe.py
-    Last Updated: 8/24/2021
+    Last Updated: 10/10/2021
     Description: Text based version of tictactoe that
                  can have 2 players or 1 player vs. an AI
 
@@ -16,8 +16,6 @@
                 
                 Inputing anything else besides a 1-9 breaks program
                 Inputing 0 skips player 1 move
-
-                Every other player 1 move w/ AI plays the opposite piece for player 1
 
 
 """
@@ -179,11 +177,6 @@ def main():
                 has_won = CheckWin()
                 if(has_won == 1) or (has_won == 2):
                     break    
-                else:
-                    if cur_player == player1:
-                        cur_player = player2
-                    else:
-                        cur_player = player1
                  
         if(has_won == 1):
             print(cur_player + ' has won!')
